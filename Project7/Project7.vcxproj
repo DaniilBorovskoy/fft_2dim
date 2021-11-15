@@ -145,18 +145,14 @@
   <ItemGroup>
     <ClCompile Include="bmptrans.cpp" />
     <ClCompile Include="complex.cpp" />
-    <ClCompile Include="fft.cpp" />
     <ClCompile Include="fft1Drec.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="text3x3.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bmptrans.h" />
     <ClInclude Include="CImg.h" />
     <ClInclude Include="complex.h" />
-    <ClInclude Include="fft.h" />
     <ClInclude Include="fft1Drec.h" />
-    <ClInclude Include="text3x3.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,6 +1,8 @@
 #include "fft1Drec.h"
 
-
+/*
+* convert real value to complex number and start recursive fft
+*/
 void fft(double* x_in,
 	std::complex<double>* x_out,
 	int N) {
@@ -21,14 +23,12 @@ void fft(double* x_in,
 	fft_rec(x_out, N);
 }
 
-void fftOnComplex(std::complex<double>* x_out,
-	int N) {
-
-}
-
+/*
+* recursive algorithm that divides each vector included in it into 2 parts 
+* and calculates fft using the butterfly method
+*/
 void fft_rec(std::complex<double>* x, int N) {
-	
-	const double PI = 3.141592653589793238463;
+
 	// Check if it is splitted enough
 	if (N <= 1) {
 		return;
@@ -36,7 +36,7 @@ void fft_rec(std::complex<double>* x, int N) {
 	int length = N / 2;
 	// Split even and odd
 	std::complex<double> *odd = new std::complex<double>[N / 2];
-	std::complex<double>* even = new std::complex<double>[N / 2];
+	std::complex<double> *even = new std::complex<double>[N / 2];
 	for (int i = 0; i < N / 2; i++) {
 		even[i] = x[i * 2];
 		odd[i] = x[i * 2 + 1];

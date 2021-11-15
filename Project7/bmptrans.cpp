@@ -14,8 +14,8 @@ int bmptrans::picfft() {
 	CImg<unsigned char> image("E:/Без имени-1.bmp");
 	
 
-	CImgDisplay main_disp1(image, "Click a point");
-	main_disp1.wait();
+	//CImgDisplay main_disp1(image, "Click a point");
+	//main_disp1.wait();
 	int height = image.height();
 	int width = image.width();
 
@@ -76,17 +76,11 @@ int bmptrans::picfft() {
 		}
 	}
 
-
+	//normalize output vector 
 	for (int i = 0; i < height * width; i++) {
 		visu[i] = (log(temp_img[i]) - 2) * 255 / 30;
 	}
 
-	/*unsigned char temp = temp_img[0];
-	for (int i = 0; i < height * width; i++) {
-		if (temp < temp_img[i]) {
-			temp = temp_img[i];
-		}
-	}*/
 	unsigned int end_time = clock(); // end time
 	double seconds = (double)(end_time - start_time) / CLOCKS_PER_SEC;
 	printf("The time: %f seconds\n", seconds);
@@ -97,9 +91,6 @@ int bmptrans::picfft() {
 	}
 	
 	visu.save_bmp("E:/image.bmp");
-	
-	
-
 	
 	return 0;
 
